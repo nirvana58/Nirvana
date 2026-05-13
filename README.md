@@ -48,8 +48,8 @@ llm         →  Ollama (local inference)
 
 **1. clone it**
 ```bash
-git clone https://github.com/yourusername/nirvana.git
-cd nirvana
+git clone https://github.com/nirvana58/Nirvana.git
+cd Nirvana
 ```
 
 **2. install deps**
