@@ -1,0 +1,99 @@
+# Configuration for Network Intrusion Detection System
+
+# Data paths
+data:
+  input_path: "data/raw/"
+  processed_path: "data/processed/"
+  output_path: "data/output/"
+
+# Preprocessing parameters
+preprocessing:
+  normalization: "z-score"
+  fill_na_value: 0
+  
+# Data sampling parameters
+# WARNING: Aggressive sampling can reduce data to single class!
+# Disable sampling if you get "Expected: [0], got [1]" error during training
+sampling:
+  minority_labels: [1,2,3,4]  # Classes to preserve entirely
+  kmeans_clusters: 1000        # Number of clusters for majority class
+  sampling_fraction: 0.1       # Increased from 0.008 to keep more data (10%)
+  random_state: 0
+
+# To disable sampling, comment out entire section:
+# sampling:
+#   minority_labels: []
+
+# Train-test split
+split:
+  train_size: 0.8
+  test_size: 0.2
+  random_state: 0
+  stratify: true
+
+# Feature selection
+feature_selection:
+  mutual_info_threshold: 1.0  # Cumulative importance threshold
+  fcbf_k: 999999  # Number of features for FCBF
+
+# SMOTE parameters
+# Note: SMOTE can only oversample (increase samples), not undersample
+# Set target counts higher than smallest class, or use 'auto'
+smote:
+  # Option 1: Specific targets (must be >= current count for each class)
+  sampling_strategy:
+    class_2: 10000  # Increased from 1000
+    class_4: 10000  # Increased from 1000
+  
+  # Option 2: Use 'auto' to balance to majority class
+  # sampling_strategy: 'auto'
+  
+  # Option 3: Use 'minority' to oversample only minority classes
+  # sampling_strategy: 'minority'
+  
+  # Option 4: Balance all to specific count
+  # sampling_strategy: 'all'  # then set target with minority_class_count
+  
+  random_state: 42
+  
+# Alternative: Disable SMOTE by commenting out entire section
+# smote:
+#   sampling_strategy: {}
+
+# Base model hyperparameters (optimized values)
+models:
+  xgboost:
+    n_estimators: 70
+    max_depth: 14
+    learning_rate: 0.7340229699980686
+    
+  random_forest:
+    n_estimators: 71
+    max_depth: 46
+    min_samples_split: 9
+    min_samples_leaf: 1
+    max_features: 20
+    criterion: "entropy"
+    random_state: 0
+    
+  decision_tree:
+    max_depth: 47
+    min_samples_split: 3
+    min_samples_leaf: 2
+    max_features: 19
+    criterion: "gini"
+    random_state: 0
+    
+  extra_trees:
+    n_estimators: 53
+    max_depth: 31
+    min_samples_split: 5
+    min_samples_leaf: 1
+    max_features: 20
+    criterion: "entropy"
+    random_state: 0
+
+  stacking_meta:
+    n_estimators: 30
+    max_depth: 36
+    learning_rate: 0.19229249758051492
