@@ -148,8 +148,8 @@ see `requirements.txt` for the full list. core packages:
 MIT. use it, fork it, break it, fix it.
 
 ---
-
-```Contact here for Threat data for testing or for any queries
+### Contact here for Threat data for testing or for any queries
+```
 https://contact-alpha-seven.vercel.app/
 ```
 
