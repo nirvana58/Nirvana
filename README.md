@@ -97,7 +97,7 @@ POST  /upload     →  push a dataset for batch analysis
 ## project layout
 
 ```
-nirvana/
+Nirvana/
 ├── app.py              ← fastapi core, routes, auth
 ├── model.py            ← model loading and inference
 ├── train_model.py      ← training pipeline
