@@ -12,7 +12,7 @@
 
 ## what is this?
 
-**NIRVANA** is a self-hosted, ML-powered network intrusion detection system. It watches your traffic, classifies threats in real time, and keeps a log of everything trying to get through. No cloud. No telemetry. Just you, your models, and your network.
+**NIRVANA** is a self-hosted, ML-powered network intrusion detection system. It watches your traffic and classifies threats . No cloud. No telemetry. Just you, your models, and your network.
 
 It runs locally via a FastAPI backend, uses JWT for auth, and ships with a CLI client and admin dashboard so you don't need to touch a browser unless you want to.
 
@@ -22,13 +22,13 @@ It runs locally via a FastAPI backend, uses JWT for auth, and ships with a CLI c
 
 | capability | description |
 |---|---|
-| 🔐 **auth** | JWT-based login with bcrypt hashing. stateless, fast, secure. |
-| 👤 **user roles** | admin and user tiers with separate access controls |
-| 🧠 **threat detection** | ML ensemble — XGBoost, RandomForest, ExtraTreesClassifier |
-| 📊 **smart preprocessing** | FCBF feature selection + SMOTE resampling for class imbalance |
-| 💬 **LLM integration** | Ollama hook for natural language threat analysis |
-| 🖥️ **admin dashboard** | CLI-based admin panel for monitoring and control |
-| 📡 **REST API** | clean endpoints for prediction, upload, and threat retrieval |
+|  **auth** | JWT-based login with bcrypt hashing. stateless, fast, secure. |
+|  **user roles** | admin and user tiers with separate access controls |
+|  **threat detection** | ML ensemble — XGBoost, RandomForest, ExtraTreesClassifier |
+|  **smart preprocessing** | FCBF feature selection + SMOTE resampling for class imbalance |
+|  **LLM integration** | Ollama hook for natural language threat analysis |
+|  **admin dashboard** | CLI-based admin panel for monitoring and control |
+|  **REST API** | clean endpoints for prediction, upload, and threat retrieval |
 
 ---
 
